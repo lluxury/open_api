@@ -1,4 +1,6 @@
 src/main/java/config/Config.java
+src/main/java/config/
+
 
 # Compiled class file
 *.class
@@ -33,4 +35,4 @@ gradle/
 gradlew
 gradlew.bat
 
-
+out/*

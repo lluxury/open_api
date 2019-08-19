@@ -1,4 +1,4 @@
-package yann;
+package yann.rds;
 
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
@@ -16,7 +16,7 @@ import config.Config;
  * @author: Yann
  * @create: 2019-08-17 23:29
  **/
-public class DescribeDatabases {
+public class DescribeDBInstances {
     public static void main(String[] args) {
 //        注意清除id
         DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou",
@@ -25,13 +25,13 @@ public class DescribeDatabases {
 
         IAcsClient client = new DefaultAcsClient(profile);
 
-        DescribeDatabasesRequest request = new DescribeDatabasesRequest();
-        request.setSysRegionId("cn-hangzhou");
-        request.setDBInstanceId("xx");
+        DescribeDBInstancesRequest request = new DescribeDBInstancesRequest();
+        request.setRegionId("cn-hangzhou");
+        //        request.setDBInstanceId(Config.DBInstanceId_BI);
 
         try{
-//            DescribeDatabasesRequest response = client.getAcsResponse(request);
-            DescribeDatabasesResponse response = client.getAcsResponse(request);
+//            DescribeDBInstancesRequest response = client.getAcsResponse(request);
+            DescribeDBInstancesResponse response = client.getAcsResponse(request);
 
             System.out.println(new Gson().toJson(response));
         }catch (ServerException e){
